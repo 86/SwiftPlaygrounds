@@ -19,3 +19,5 @@ sum
 // method chain
 let chain = array.filter{$0 % 2 == 0}.map{$0 * $0}.reduce(0, combine: {$0 + $1})
 chain
+
+

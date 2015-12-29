@@ -3,37 +3,50 @@
 import UIKit
 
 // fizz buzz string
-enum FizzBuzz : String {
-    case Fizz = "Fizz"
-    case Buzz = "Buzz"
-    case FizzBuzz = "FizzBuzz"
+enum FizzBuzz: String {
+    case Fizz
+    case Buzz
+    case FizzBuzz
 }
 
 // standard
-println("[Standard fizz buzz]")
+print("===================================================")
+print("[Standard fizz buzz]")
+print("===================================================")
 for i in 1...100 {
     if (i % 3 == 0) && (i % 5 == 0) {
-        println(FizzBuzz.FizzBuzz.rawValue)
+        print(FizzBuzz.FizzBuzz.rawValue)
     } else if ( i % 3 == 0) {
-        println(FizzBuzz.Fizz.rawValue)
+        print(FizzBuzz.Fizz.rawValue)
     } else if ( i % 5 == 0) {
-        println(FizzBuzz.Buzz.rawValue)
+        print(FizzBuzz.Buzz.rawValue)
     } else {
-        println(i)
+        print(i)
     }
 }
 
 // switch and taple
-println("[Switch and Taple]")
+print("===================================================")
+print("[Switch and Taple]")
+print("===================================================")
 for i in 1...100 {
     switch (i % 3, i % 5) {
-    case (0, 0):
-        println(FizzBuzz.FizzBuzz.rawValue)
-    case (0, _):
-        println(FizzBuzz.Fizz.rawValue)
-    case (_, 0):
-        println(FizzBuzz.Buzz.rawValue)
-    default :
-        println(i)
+    case (0, 0): print(FizzBuzz.FizzBuzz.rawValue)
+    case (0, _): print(FizzBuzz.Fizz.rawValue)
+    case (_, 0): print(FizzBuzz.Buzz.rawValue)
+    case (_, _): print(i)
+    }
+}
+
+// foreach
+print("===================================================")
+print("[foreach]")
+print("===================================================")
+(1...100).forEach {
+    switch ($0 % 3, $0 % 5) {
+    case (0, 0): print(FizzBuzz.FizzBuzz.rawValue)
+    case (0, _): print(FizzBuzz.Fizz.rawValue)
+    case (_, 0): print(FizzBuzz.Buzz.rawValue)
+    case (_, _): print($0)                    
     }
 }
