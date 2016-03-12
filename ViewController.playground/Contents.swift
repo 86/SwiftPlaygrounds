@@ -1,7 +1,7 @@
 import UIKit
 import XCPlayground
 
-class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     lazy var tableView: UITableView = { [unowned self] in
         let tableview = UITableView(frame: self.view.frame, style: UITableViewStyle.Plain)
         tableview.delegate = self
@@ -20,7 +20,7 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return items.count;
+        return items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
